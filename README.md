@@ -39,7 +39,7 @@ cli.py: error: the following arguments are required: start, end, bpm, fps
 # ]
 
 # Chain with "jq" to get only nearest frames where beats occur:
-./bpm2fps.sh 0 10 60 24 | jq '.[]["frame"]
+./bpm2fps.sh 0 10 60 24 | jq '.[]["frame"]'
 # Example result:
 # 0
 # 24
