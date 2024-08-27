@@ -16,6 +16,7 @@ setup(
     version="1.0.0",
     description="Convert beats per minute to animation frames.",
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url="https://github.com/BreadMakesYouFull/bpm2fps.git",
     author="BreadMakesYouFull",
     license="MIT",
