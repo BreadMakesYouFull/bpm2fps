@@ -11,9 +11,9 @@ Match song beats to their closest frame for animation.
 
 ## Preview
 
-![GUI](./preview_gui.gif)
+![GUI](https://raw.githubusercontent.com/BreadMakesYouFull/bpm2fps/main/preview_gui.gif)
 
-![Exported USD reference](./preview_usd.gif)
+![Exported USD reference](https://raw.githubusercontent.com/BreadMakesYouFull/bpm2fps/main/preview_usd.gif)
 
 ## Install
 
