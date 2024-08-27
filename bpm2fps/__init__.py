@@ -1,10 +1,8 @@
 """bpm2fps - Match a songs beats to their closest frame.
 """
 
-def frame_at_time(
-    time: float,
-    fps: float = 24.0
-) -> int:
+
+def frame_at_time(time: float, fps: float = 24.0) -> int:
     """
     Returns the closest frame (rounding down) at a particular time.
 
@@ -30,11 +28,7 @@ def bps(bpm: float) -> float:
     return (1.0 / 60.0) * bpm
 
 
-def frange(
-    start: float,
-    stop: float,
-    step: float=1.0
-):
+def frange(start: float, stop: float, step: float = 1.0):
     """Produces a sequence of floats from start (inclusive).
 
     Args:
@@ -46,16 +40,13 @@ def frange(
         float: range values.
     """
     value = start
-    while(value < stop):
+    while value < stop:
         yield value
         value += step
 
 
 def beats_to_frames(
-        start: float,
-        stop: float,
-        bpm: float = 60.0,
-        fps: float = 24.0
+    start: float, stop: float, bpm: float = 60.0, fps: float = 24.0
 ) -> tuple[float]:
     """Get clostest frames for each beat in a time range.
 
@@ -68,17 +59,11 @@ def beats_to_frames(
     Returns:
         tuple[float, ...]: Frames for each beat.
     """
-    return (
-        frame_at_time(time, fps)
-        for time in frange(start, stop, 1 / bps(bpm))
-    )
+    return (frame_at_time(time, fps) for time in frange(start, stop, 1 / bps(bpm)))
 
 
 def beats_to_frames_data(
-        start: float,
-        stop: float,
-        bpm: float = 60.0,
-        fps: float = 24.0
+    start: float, stop: float, bpm: float = 60.0, fps: float = 24.0
 ) -> tuple[dict[str, float]]:
     """Get clostest frame datafor each beat in a time range.
 
@@ -92,12 +77,6 @@ def beats_to_frames_data(
         tuple[float, ...]: Frames for each beat.
     """
     return [
-        {
-            "beat": i,
-            "frame": frame,
-            "second": frame * (1.0 / fps)
-        }
-        for (i, frame) in enumerate(
-            beats_to_frames(start, stop, bpm, fps)
-        )
+        {"beat": i, "frame": frame, "second": frame * (1.0 / fps)}
+        for (i, frame) in enumerate(beats_to_frames(start, stop, bpm, fps))
     ]

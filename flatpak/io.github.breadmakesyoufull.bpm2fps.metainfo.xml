@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.breadmakesyoufull.bpm2fps</id>
+  <name>bpm2fps</name>
+  <summary>Match beats to frames for animation</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <developer_name>BreadMakesYouFull</developer_name>
+  <url type="homepage">https://github.com/breadmakesyoufull/bpm2fps</url>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  <content_rating type="oars-1.1" />
+  <description>
+    <p>
+      Match song beats to their closest frame for animation.
+    </p>
+    <ul>
+      <li>Utility to convert beats per minute to animation frames.</li>
+      <li>Data export to CSV or JSON.</li>
+      <li>USD export for bouncing ball reference.</li>
+      <li>Also available as cli / python utility at pypi</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.breadmakesyoufull.bpm2fps.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/BreadMakesYouFull/bpm2fps/main/preview.png</image>
+      <caption>Convert beats to keyframes.</caption>
+    </screenshot>
+  </screenshots>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#ffefb9</color>
+    <color type="primary" scheme_preference="dark">#500000</color>
+  </branding>
+
+  <releases>
+
+    <release version="1.0.0" date="2024-08-27">
+      <description>
+        <p>Initial release</p>
+      </description>
+    </release>
+
+  </releases>
+
+</component>
+<!-- https://www.freedesktop.org/software/appstream/metainfocreator/#/guiapp -->

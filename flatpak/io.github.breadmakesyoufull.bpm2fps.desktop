@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=bpm2fps
+Comment=Match beats to frames for animation
+Categories=Utility;Calculator;
+Icon=io.github.breadmakesyoufull.bpm2fps
+Exec=bpm2fps
+Terminal=false

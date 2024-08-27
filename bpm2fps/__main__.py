@@ -1,4 +1,4 @@
-"""bpm2fps - Match a songs beats to their closest frame.
+"""bpm2fps - Match song beats to their closest frame.
 """
 
 from .cli import main
