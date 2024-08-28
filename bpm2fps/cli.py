@@ -39,6 +39,7 @@ def main():
     else:
         try:
             from . import gui
+
             gui.main()
         except ImportError:
             parser.print_help()

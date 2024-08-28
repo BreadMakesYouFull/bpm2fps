@@ -17,6 +17,16 @@ Match song beats to their closest frame for animation.
 
 ## Install
 
+<a href='https://flathub.org/apps/io.github.breadmakesyoufull.bpm2fps'>
+  <img width='128' alt='Get it on Flathub' src='https://flathub.org/api/badge?locale=en'/>
+  Linux install via flatpak
+</a>
+
+[![PyPI version](https://badge.fury.io/py/bpm2fps.svg)](https://badge.fury.io/py/bpm2fps) [Python install](https://pypi.org/project/bpm2fps/)
+
+[![](https://github.com/breadmakesyoufull/bpm2fps/actions/workflows/lint-then-test.yml/badge.svg)](https://github.com/BreadMakesYouFull/bpm2fps/actions/workflows/lint-then-test.yml)
+
+
 Requires:
 
 * python 3
