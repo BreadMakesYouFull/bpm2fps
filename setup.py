@@ -13,7 +13,7 @@ with open(path.join(here, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="bpm2fps",
-    version="1.0.1",
+    version="1.0.2",
     description="Convert beats per minute to animation frames.",
     long_description=long_description,
     long_description_content_type='text/markdown',
