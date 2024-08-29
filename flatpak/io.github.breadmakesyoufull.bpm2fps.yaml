@@ -12,6 +12,7 @@ finish-args:
   - --socket=fallback-x11
   - --socket=wayland
   - --device=dri
+  - --filesystem=xdg-documents
 modules:
   - name: bpm2fps
     buildsystem: simple
@@ -23,5 +24,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/BreadMakesYouFull/bpm2fps.git
-        tag: TAG
-        commit: COMMIT
+        branch: main
+        #tag: TAG
+        #commit: COMMIT

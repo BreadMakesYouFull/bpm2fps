@@ -1,7 +1,8 @@
 import QtQuick
+import QtCore
 import QtQuick.Controls
 import QtQuick.Layouts
-import Qt.labs.platform
+import QtQuick.Dialogs
 
 
 ApplicationWindow {
@@ -135,7 +136,18 @@ ApplicationWindow {
                 padding: 10
                 Layout.fillWidth: true
                 onClicked: {
-                    fileDialogCsv.open()
+                    fileDialogSaveCsv.open()
+                }
+            }
+            FileDialog {
+                id: fileDialogSaveCsv
+                title: "save as csv"
+                currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+                fileMode: FileDialog.SaveFile
+                defaultSuffix: ".csv"
+                nameFilters: ["csv (*.csv)", "all (*)"]
+                onAccepted: {
+                    backend.save(selectedFile, "csv");
                 }
             }
             Button {
@@ -143,7 +155,18 @@ ApplicationWindow {
                 padding: 10
                 Layout.fillWidth: true
                 onClicked: {
-                    fileDialogJson.open()
+                    fileDialogSaveJson.open()
+                }
+            }
+            FileDialog {
+                id: fileDialogSaveJson
+                title: "save as json"
+                currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+                fileMode: FileDialog.SaveFile
+                defaultSuffix: ".json"
+                nameFilters: ["json (*.json)", "all (*)"]
+                onAccepted: {
+                    backend.save(selectedFile, "json");
                 }
             }
             Button {
@@ -151,37 +174,18 @@ ApplicationWindow {
                 padding: 10
                 Layout.fillWidth: true
                 onClicked: {
-                    fileDialogUsd.open()
+                    fileDialogSaveUsd.open()
                 }
             }
             FileDialog {
-                id: fileDialogCsv
-                folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+                id: fileDialogSaveUsd
+                title: "save as usd"
+                currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
                 fileMode: FileDialog.SaveFile
-                defaultSuffix: ".csv"
-                nameFilters: ["json (*.csv)", "all (*)"]
+                defaultSuffix: ".usd"
+                nameFilters: ["usd (*.usd)", "all (*)"]
                 onAccepted: {
-                    backend.save(file, "csv")
-                }
-            }
-            FileDialog {
-                id: fileDialogJson
-                folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-                fileMode: FileDialog.SaveFile
-                defaultSuffix: ".json"
-                nameFilters: ["json (*.json)", "all (*)"]
-                onAccepted: {
-                    backend.save(file, "json")
-                }
-            }
-            FileDialog {
-                id: fileDialogUsd
-                folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
-                fileMode: FileDialog.SaveFile
-                defaultSuffix: ".usda"
-                nameFilters: ["usd (*.usd)", "usda (*.usda)", "all (*)"]
-                onAccepted: {
-                    backend.save(file, "usd")
+                    backend.save(selectedFile, "usd");
                 }
             }
         }

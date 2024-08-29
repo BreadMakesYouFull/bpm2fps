@@ -1,4 +1,5 @@
 import json
+import os
 import pkg_resources
 import re
 import sys
@@ -71,20 +72,20 @@ class Backend(QObject):
         clipboard.setText(self._resultJson)
 
     @Slot(str, str)
-    def save(self, filepath, filetype):
+    def save(self, filepath, extension):
         filepath = filepath.replace("file://", "")
-        if filetype == "json":
+        if extension == "json":
             data = self._resultJson
-        elif filetype == "usd":
-            data = usd.generate(self._bpm, self._fps)
-        elif filetype == "csv":
+        elif extension == "csv":
             data = "\n".join([",".join(map(str, row)) for row in self.result._data])
         else:
-            return
+            # Else assume usd / usda
+            data = usd.generate(self._bpm, self._fps)
         try:
             with open(filepath, "w") as file:  # Open the file for writing
                 file.write(data)
-            print(f"File saved: {filepath}")
+            if os.path.exists(filepath):
+                print(f"File saved: {filepath}")
         except Exception as e:
             print(f"Error on save: {e}")
 
