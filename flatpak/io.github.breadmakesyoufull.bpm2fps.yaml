@@ -13,6 +13,7 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --filesystem=xdg-documents
+  - --filesystem=xdg-desktop
 modules:
   - name: bpm2fps
     buildsystem: simple
